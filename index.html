@@ -1,97 +1,200 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
 
-        h1 {
-            color: #333;
-            text-align: center;
-            padding: 20px;
-            font-size: 48px;
-            font-weight: bold;
-        }
+      h1 {
+        color: #333;
+        text-align: center;
+        padding: 20px;
+        font-size: 48px;
+        font-weight: bold;
+      }
 
-        img {
-            display: block;
-            margin: 0 auto;
-            width: 300px;
-            height: auto;
-        }
-         p {
-            color: #666;
-            line-height: 1.6;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .intro {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .benefits {
-            background-color: lightblue;
-            font-size: 18px;
-        }
-        .about-me {
-            font-style: italic;
-            color: #444;
-        }
-        .conclusion {
-            font-style: italic;
-            color: #444;
-        }
-        .about-me-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 24px;
-            max-width: 700px;
-            margin: 30px auto;
-            background: #e8f4f8;
-            border-left: 4px solid #333;
-            padding: 24px 32px;
-            border-radius: 8px;
-        }
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+        height: auto;
+      }
+      .download-btn {
+        display: block;
+        margin: 32px auto 0 auto;
+        width: 240px;
+        padding: 14px 28px;
+        background-color: #0074d9;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .download-btn:hover {
+        background-color: #005fa3;
+      }
+      p {
+        color: #666;
+        line-height: 1.6;
+        padding: 20px;
+        text-align: center;
+      }
 
-        .about-me-photo {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 50%;
-            flex-shrink: 0;
-            margin-top: 8px;
-        }
+      .intro {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+      }
 
-        .about-me-text p {
-            font-style: italic;
-            color: #444;
-            text-align: left;
-            padding: 0 0 16px 0;
-            margin: 0 0 16px 0;
-            font-size: 18px;
-        }
+      .benefits {
+        background-color: lightblue;
+        font-size: 18px;
+      }
+      .contact-form {
+        max-width: 400px;
+        margin: 32px auto;
+        padding: 24px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .contact-form h2 {
+        text-align: center;
+        margin-bottom: 12px;
+        color: #0074d9;
+        font-size: 26px;
+      }
+
+      .contact-form label {
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+
+      .contact-form input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .contact-form button {
+        background: #0074d9;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .contact-form button:hover {
+        background: #005fa3;
+      }
+      .conclusion {
+        font-style: italic;
+        color: #444;
+      }
+      .about-me {
+        font-style: italic;
+        color: #444;
+      }
+      .about-me-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        max-width: 700px;
+        margin: 30px auto;
+        background: #e8f4f8;
+        border-left: 4px solid #333;
+        padding: 24px 32px;
+        border-radius: 8px;
+      }
+
+      .about-me-photo {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 8px;
+      }
+
+      .about-me-text p {
+        font-style: italic;
+        color: #444;
+        text-align: left;
+        padding: 0 0 16px 0;
+        margin: 0 0 16px 0;
+        font-size: 18px;
+      }
     </style>
-</head>
-<body>
-    <h1> GLP1 Website</h1>
-    <img src="images/simple_cartoon_glp1_image.png" alt="A colorful and cartoon glp1 image">
-    <p class="intro">Welcome to the GLP1 website! Here you can find information about GLP1 medications and their benefits.</p>
-    <p class="benefits">GLP-1 medications help with weight loss and blood sugar control.</p>
+  </head>
+  <body>
+    <h1>GLP1 Website</h1>
+    <img
+      src="images/simple_cartoon_glp1_image.png"
+      alt="A colorful and cartoon glp1 image"
+    />
+    <a href="attatchments/GLP1 Example PDF.pdf" download class="download-btn"
+      >Download GLP-1 Info PDF</a
+    >
+    <p class="intro">
+      Welcome to the GLP1 website! Here you can find information about GLP1
+      medications and their benefits.
+    </p>
+    <p class="benefits">
+      GLP-1 medications help with weight loss and blood sugar control.
+    </p>
     <div class="about-me-container">
-    <img src="images/mike-thomas-photo.png" alt="Mike Thomas" class="about-me-photo">
-    <div class="about-me-text">
-        <p>Hi, I'm Mike Thomas, a board-certified Health Coach and Lifestyle Medicine specialist who understands the challenges busy professionals face with weight management.</p>
-        <p>After nearly 30 years in corporate America and as a former pharmacist, I've dedicated my life to helping clients achieve dramatic health improvements through GLP-1 treatments and lifestyle changes.</p>
-        <p>I find tremendous joy in guiding people on their journey to better health, offering compassionate support without judgment because we all face challenges in our wellness journey.</p>
+      <img
+        src="images/mike-thomas-photo.png"
+        alt="Mike Thomas"
+        class="about-me-photo"
+      />
+      <div class="about-me-text">
+        <p>
+          Hi, I'm Mike Thomas, a board-certified Health Coach and Lifestyle
+          Medicine specialist who understands the challenges busy professionals
+          face with weight management.
+        </p>
+        <p>
+          After nearly 30 years in corporate America and as a former pharmacist,
+          I've dedicated my life to helping clients achieve dramatic health
+          improvements through GLP-1 treatments and lifestyle changes.
+        </p>
+        <p>
+          I find tremendous joy in guiding people on their journey to better
+          health, offering compassionate support without judgment because we all
+          face challenges in our wellness journey.
+        </p>
+      </div>
     </div>
-</div>
-    <p class="conclusion">Consult your doctor to see if GLP-1 is right for you.</p>
-</body>
+    <form class="contact-form">
+      <h2>Contact Me</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <button type="submit">Submit</button>
+    </form>
+    <p class="conclusion">
+      Consult your doctor to see if GLP-1 is right for you.
+    </p>
+  </body>
 </html>
