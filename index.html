@@ -141,6 +141,18 @@
         margin: 0 0 16px 0;
         font-size: 18px;
       }
+      #form-message.success {
+        color: green;
+        font-weight: bold;
+        margin-top: 16px;
+        text-align: center;
+      }
+      #form-message.error {
+        color: red;
+        font-weight: bold;
+        margin-top: 16px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -193,8 +205,35 @@
 
       <button type="submit">Submit</button>
     </form>
+    <div id="form-message"></div>
     <p class="conclusion">
       Consult your doctor to see if GLP-1 is right for you.
     </p>
+    <script>
+      const BACKEND_URL = 'http://localhost:3000/contact'; // TODO: Update with your backend URL
+      document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const messageDiv = document.getElementById('form-message');
+      try {
+        messageDiv.textContent = 'Submitting...';
+        messageDiv.className = '';
+        const response = await fetch(BACKEND_URL, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ name, email})
+        });
+        const result = await response.json();
+        console.log('Form submission result:', result);
+        messageDiv.textContent = 'Thank you for your submission!';
+        messageDiv.className = 'success';
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        messageDiv.textContent = 'There was an error submitting the form.';
+        messageDiv.className = 'error';
+      }
+    });
+  </script>
   </body>
 </html>
