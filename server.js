@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET;
+const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET || 'FAKE-SECRET';
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));

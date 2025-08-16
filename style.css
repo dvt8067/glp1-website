@@ -1,0 +1,374 @@
+/* Together row: image and block side by side */
+.together-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 64px;
+  margin: 48px auto 0 auto;
+  max-width: 1200px;
+}
+.together-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+}
+.together-image img {
+  width: 520px;
+  max-width: 40vw;
+  min-width: 260px;
+  height: auto;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.13));
+  border-radius: 18px;
+  transition: width 0.2s, max-width 0.2s;
+  object-fit: contain;
+  align-self: center;
+}
+.together-container {
+  margin: 0;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* What We'll Do Together block */
+.together-container {
+  margin: 48px auto 0 auto;
+  max-width: 600px;
+  background: linear-gradient(135deg, #f9fbff 60%, #e3f0fa 100%);
+  border-radius: 24px;
+  border: 1.5px solid #b3d1e7;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 44px 48px 36px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.together-heading {
+  font-size: 24px;
+  color: #0074d9;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.together-list {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+  width: 100%;
+}
+.together-item {
+  margin-bottom: 14px;
+  font-size: 18px;
+  color: #1a3557;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #b3d1e7 0%, #e3f0fa 100%);
+  border-radius: 6px;
+  padding: 8px 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: background 0.2s;
+}
+.together-item:last-child {
+  margin-bottom: 0;
+}
+.together-item:hover {
+  background: linear-gradient(90deg, #e3f0fa 0%, #b3d1e7 100%);
+}
+/* Add spacing between download button and together block */
+.download-btn {
+  margin-bottom: 36px;
+}
+/* Centered top image of two people running */
+.top-running-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 32px 0 24px 0;
+  padding: 0;
+}
+.top-running-image img {
+  display: block;
+  margin: 0 auto;
+  width: 1000px;
+  max-width: 90vw;
+  height: auto;
+  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.1));
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-family: "Roboto", "Segoe UI", "Arial", sans-serif;
+  font-size: 54px;
+  font-weight: 900;
+  text-align: center;
+  padding: 32px 0 16px 0;
+  margin-bottom: 0;
+  color: #223a5e;
+  letter-spacing: 2px;
+  text-shadow: 0 6px 24px rgba(34, 58, 94, 0.18), 0 2px 0 #fff, 0 1px 0 #1fa2ff;
+}
+
+.cartoon-glp1 {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+}
+.first-row {
+  display: flex;
+  align-items: center; /* vertical centering */
+  gap: 100px; /* more reasonable gap */
+  max-width: 1200px;
+  margin: 40px auto;
+}
+.about-mike-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 900px;
+  margin-left: 0;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  min-height: 340px;
+}
+.about-mike-photo {
+  width: 140px;
+  height: 180px;
+  min-width: 120px;
+  min-height: 160px;
+  max-width: 160px;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+  margin: 24px 0 24px 24px;
+}
+.about-mike-content {
+  background: #fff;
+  padding: 36px 44px 36px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #222;
+  flex: 2;
+  box-sizing: border-box;
+  letter-spacing: 0.05px;
+  min-width: 260px;
+}
+.about-mike-content p {
+  margin: 0 0 16px 0;
+  padding: 0;
+  font-weight: 400;
+  color: #22334a;
+  background: none;
+  text-align: left;
+}
+.about-mike-content p:last-child {
+  margin-bottom: 0;
+}
+
+.challenge-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f9fbff 60%, #e3f0fa 100%);
+  border-radius: 24px;
+  border: 1.5px solid #b3d1e7;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 48px 56px;
+  min-width: 380px;
+  max-width: 520px;
+  margin-right: 40px;
+  transition: box-shadow 0.2s;
+}
+.challenge-container:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+}
+.challenge-heading {
+  font-size: 24px;
+  color: #0074d9;
+  margin-bottom: 12px;
+}
+
+.challenge-subheading {
+  text-align: center;
+  margin: 0 0 12px 0;
+  font-style: italic;
+}
+
+.challenge-list {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.challenge-item {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #1a3557;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #b3d1e7 0%, #e3f0fa 100%);
+  border-radius: 6px;
+  padding: 6px 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: background 0.2s;
+}
+.challenge-item:hover {
+  background: linear-gradient(90deg, #e3f0fa 0%, #b3d1e7 100%);
+}
+.download-btn {
+  display: block;
+  margin: 32px auto 0 auto;
+  width: 240px;
+  padding: 14px 28px;
+  background-color: #0074d9;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.download-btn:hover {
+  background-color: #005fa3;
+}
+p {
+  color: #666;
+  line-height: 1.6;
+  padding: 20px;
+  text-align: center;
+}
+
+.intro {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.benefits {
+  background-color: lightblue;
+  font-size: 18px;
+}
+.contact-form {
+  max-width: 400px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #0074d9;
+  font-size: 26px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.contact-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  background: #0074d9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover {
+  background: #005fa3;
+}
+.conclusion {
+  font-style: italic;
+  color: #444;
+}
+.about-me {
+  font-style: italic;
+  color: #444;
+}
+.about-me-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 700px;
+  margin: 30px auto;
+  background: #e8f4f8;
+  border-left: 4px solid #333;
+  padding: 24px 32px;
+  border-radius: 8px;
+}
+
+.about-me-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.about-me-text p {
+  font-style: italic;
+  color: #444;
+  text-align: left;
+  padding: 0 0 16px 0;
+  margin: 0 0 16px 0;
+  font-size: 18px;
+}
+#form-message.success {
+  color: green;
+  font-weight: bold;
+  margin-top: 16px;
+  text-align: center;
+}
+#form-message.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 16px;
+  text-align: center;
+}
+#form-message.submitting {
+  color: orange;
+  font-weight: bold;
+  margin-top: 16px;
+  text-align: center;
+}
