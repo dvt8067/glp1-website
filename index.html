@@ -237,9 +237,13 @@
               body: JSON.stringify({ name, email, recaptcha: recaptchaResponse })
             });
             const result = await response.json();
-            console.log('Form submission result:', result);
-            messageDiv.textContent = 'Thank you for your submission!';
-            messageDiv.className = 'success';
+            if (response.ok) {
+              messageDiv.textContent = 'Thank you for your submission!';
+              messageDiv.className = 'success';
+            } else {
+              messageDiv.textContent = result.message || 'reCAPTCHA verification failed.';
+              messageDiv.className = 'error';
+            }
           } catch (error) {
             console.error('Error submitting form:', error);
             messageDiv.textContent = 'There was an error submitting the form.';
