@@ -153,6 +153,12 @@
         margin-top: 16px;
         text-align: center;
       }
+      #form-message.submitting {
+        color: orange;
+        font-weight: bold;
+        margin-top: 16px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -202,37 +208,45 @@
 
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required />
-
+      
       <button type="submit">Submit</button>
     </form>
     <div id="form-message"></div>
     <p class="conclusion">
       Consult your doctor to see if GLP-1 is right for you.
     </p>
+   <script src="https://www.google.com/recaptcha/api.js?render=6Lfzl6crAAAAAC3O3Eo0V2fRs9PAipGbax__dFOF"></script>
     <script>
-      const BACKEND_URL = 'https://glp1-website.onrender.com/contact'; // TODO: Update with your backend URL
+      // const BACKEND_URL = 'http://127.0.0.1:3000/contact';
+      const BACKEND_URL = 'https://glp1-website.onrender.com/contact'; 
+      const SITE_KEY = '6Lfzl6crAAAAAC3O3Eo0V2fRs9PAipGbax__dFOF'; // 
       document.querySelector('.contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const messageDiv = document.getElementById('form-message');
-      try {
-        messageDiv.textContent = 'Submitting...';
-        messageDiv.className = '';
-        const response = await fetch(BACKEND_URL, {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ name, email})
+      messageDiv.textContent = 'Submitting... This will only take a few moments.';
+      messageDiv.className = 'submitting';
+      grecaptcha.ready(function() {
+        grecaptcha.execute(SITE_KEY, {action: 'submit'}).then(async function(recaptchaResponse) {
+          // Send the form data along with the reCAPTCHA response to the backend
+          try {
+            const response = await fetch(BACKEND_URL, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ name, email, recaptcha: recaptchaResponse })
+            });
+            const result = await response.json();
+            console.log('Form submission result:', result);
+            messageDiv.textContent = 'Thank you for your submission!';
+            messageDiv.className = 'success';
+          } catch (error) {
+            console.error('Error submitting form:', error);
+            messageDiv.textContent = 'There was an error submitting the form.';
+            messageDiv.className = 'error';
+          }
         });
-        const result = await response.json();
-        console.log('Form submission result:', result);
-        messageDiv.textContent = 'Thank you for your submission!';
-        messageDiv.className = 'success';
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        messageDiv.textContent = 'There was an error submitting the form.';
-        messageDiv.className = 'error';
-      }
+      });
     });
   </script>
   </body>

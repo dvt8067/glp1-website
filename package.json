@@ -1,6 +1,7 @@
 {
   "name": "glp1-website",
   "version": "1.0.0",
+  "type": "module",
   "description": "This is a glp1 website.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +13,9 @@
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
+    "react-google-recaptcha": "^3.1.0",
+    "react-google-recaptcha-v3": "^1.11.0"
   }
 }
