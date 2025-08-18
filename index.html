@@ -48,7 +48,7 @@
       </div>
     </div>
     <p class="page-divider">
-      Let's talk about how I can help you make the most of your GLP-1 journey.
+      Let's talk about how we can make the most of your GLP-1 journey.
     </p>
 
     <div class="together-row">
@@ -74,9 +74,7 @@
       </div>
     </div>
 
-    <p class="page-divider">
-      We'll work together to make your GLP-1 journey a success.
-    </p>
+    <p class="page-divider">Science-based strategies, compassionate support.</p>
 
     <div class="how-i-work-row">
       <section class="how-i-work-section">
@@ -96,7 +94,9 @@
         />
       </div>
     </div>
-
+    <p class="page-divider">
+      Your goals are within reach—let’s make them happen.
+    </p>
     <section class="testimonials-section">
       <h2 class="testimonials-heading">Client Wins</h2>
       <div class="testimonial">
@@ -113,7 +113,9 @@
         <span class="testimonial-client">– Myles A. (entrepreneur)</span>
       </div>
     </section>
-    <p class="page-divider">Mike has over 25 years of experience as a coach.</p>
+    <p class="page-divider">
+      See what’s possible when you have the right plan and support.
+    </p>
     <div class="end-block">
       <section class="book-call-section">
         <h2 class="book-call-heading">Ready to Talk?</h2>
@@ -126,6 +128,9 @@
           >Book Your Call</a
         >
       </section>
+      <p class="page-divider">
+        Have questions or want to get started? I’m here to help.
+      </p>
       <form class="contact-form">
         <h2>Contact Mike</h2>
         <label for="name">Name:</label>
@@ -134,17 +139,27 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
 
+        <label for="form-message">Message:</label>
+        <textarea
+          class="form-message"
+          id="form-message"
+          name="form-message"
+          rows="6"
+          placeholder="Type your message here..."
+          required
+        ></textarea>
+
         <button type="submit">Submit</button>
       </form>
-      <div id="form-message"></div>
+      <div class="result-message" id="result-message"></div>
     </div>
     <p class="conclusion">
       Consult your doctor to see if GLP-1 is right for you.
     </p>
     <script src="https://www.google.com/recaptcha/api.js?render=6Lfzl6crAAAAAC3O3Eo0V2fRs9PAipGbax__dFOF"></script>
     <script>
-      const BACKEND_URL = "http://127.0.0.1:3000/contact";
-      // const BACKEND_URL = 'https://glp1-website.onrender.com/contact';
+      // const BACKEND_URL = "http://127.0.0.1:3000/contact";
+      const BACKEND_URL = 'https://glp1-website.onrender.com/contact';
       const SITE_KEY = "6Lfzl6crAAAAAC3O3Eo0V2fRs9PAipGbax__dFOF"; //
       document
         .querySelector(".contact-form")
@@ -152,10 +167,11 @@
           e.preventDefault();
           const name = document.getElementById("name").value;
           const email = document.getElementById("email").value;
-          const messageDiv = document.getElementById("form-message");
-          messageDiv.textContent =
+          const formMessage = document.getElementById("form-message").value;
+          const statusMessageDiv = document.getElementById("result-message");
+          statusMessageDiv.textContent =
             "Submitting... This will only take a few moments.";
-          messageDiv.className = "submitting";
+          statusMessageDiv.className = "result-message submitting";
           grecaptcha.ready(function () {
             grecaptcha
               .execute(SITE_KEY, { action: "submit" })
@@ -168,23 +184,25 @@
                     body: JSON.stringify({
                       name,
                       email,
+                      formMessage,
                       recaptcha: recaptchaResponse,
                     }),
                   });
                   const result = await response.json();
                   if (response.ok) {
-                    messageDiv.textContent = "Thank you for your submission!";
-                    messageDiv.className = "success";
+                    statusMessageDiv.textContent =
+                      "Thank you for your submission!";
+                    statusMessageDiv.className = "result-message success";
                   } else {
-                    messageDiv.textContent =
+                    statusMessageDiv.textContent =
                       result.message || "reCAPTCHA verification failed.";
-                    messageDiv.className = "error";
+                    statusMessageDiv.className = "result-message error";
                   }
                 } catch (error) {
                   console.error("Error submitting form:", error);
-                  messageDiv.textContent =
+                  statusMessageDiv.textContent =
                     "There was an error submitting the form.";
-                  messageDiv.className = "error";
+                  statusMessageDiv.className = "result-message error";
                 }
               });
           });

@@ -18,7 +18,6 @@
     min-height: 340px;
     max-width: 50%;
     background: linear-gradient(135deg, #f9fbff 60%, #e3f0fa 100%);
-    border-radius: 24px;
     border: 1.5px solid #b3d1e7;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     margin: 0;
@@ -457,8 +456,32 @@ p {
 }
 
 .page-divider {
-  background-color: lightblue;
-  font-size: 18px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: linear-gradient(90deg, #e3f0fa 0%, #b3d1e7 100%);
+  color: #223a5e;
+  font-size: 20px;
+  font-family: "Roboto", "Segoe UI", "Arial", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  padding: 22px 0;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.2s;
+  z-index: 1;
+}
+.page-divider span {
+  display: inline-block;
+  padding: 0 32px;
+  border-radius: 18px;
+}
+.page-divider:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
 }
 .contact-form {
   max-width: 400px;
@@ -487,9 +510,16 @@ p {
 
 .contact-form input {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px solid #b3d1e7;
+  border-radius: 8px;
   font-size: 16px;
+  background: #f9fbff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.contact-form input:focus {
+  border-color: #0074d9;
+  box-shadow: 0 0 0 2px #b3d1e7;
 }
 
 .contact-form button {
@@ -506,6 +536,40 @@ p {
 
 .contact-form button:hover {
   background: #005fa3;
+}
+
+/* Contact Form Message Styles */
+/* Result Message Base Style */
+.result-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  min-height: 1.5em;
+  text-align: center;
+  display: none;
+}
+.result-message.submitting {
+  display: block;
+  background: #f5f5f5;
+  color: #555;
+  border: 1px solid #e0e0e0;
+}
+.result-message.success {
+  display: block;
+  background: #e6f9ed;
+  color: #217a3c;
+  border: 1px solid #b6e2c6;
+}
+.result-message.error {
+  display: block;
+  background: #ffeaea;
+  color: #b3261e;
+  border: 1px solid #f5bcbc;
 }
 .conclusion {
   font-style: italic;
@@ -544,19 +608,19 @@ p {
   margin: 0 0 16px 0;
   font-size: 18px;
 }
-#form-message.success {
+.result-message.success {
   color: green;
   font-weight: bold;
   margin-top: 16px;
   text-align: center;
 }
-#form-message.error {
+.result-message.error {
   color: red;
   font-weight: bold;
   margin-top: 16px;
   text-align: center;
 }
-#form-message.submitting {
+.result-message.submitting {
   color: orange;
   font-weight: bold;
   margin-top: 16px;
