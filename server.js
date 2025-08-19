@@ -3,14 +3,15 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import fetch from "node-fetch";
 import nodemailer from "nodemailer";
-
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET || "FAKE-SECRET";
-const EMAIL_SENDER_SECRET = process.env.EMAIL_SENDER_SECRET || "FAKE-EMAIL-SECRET";
-const EMAIL_SENDER_PASSWORD_SECRET = process.env.EMAIL_SENDER_PASSWORD_SECRET || "FAKE-EMAIL-PASSWORD";
-const EMAIL_RECEIVER_SECRET = process.env.EMAIL_RECEIVER_SECRET || "FAKE-EMAIL-RECEIVER";
+// TODO: Change the environmental variables back
+const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET;
+const EMAIL_SENDER_SECRET = process.env.EMAIL_SENDER_SECRET;
+const EMAIL_SENDER_PASSWORD_SECRET = process.env.EMAIL_SENDER_PASSWORD_SECRET;
+const EMAIL_RECEIVER_SECRET = process.env.EMAIL_RECEIVER_SECRET;
 //Define the transporter for nodemailer
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -53,7 +54,16 @@ app.post("/contact", async (req, res) => {
       text: `You have a new contact form submission from ${name} <${email}>: ${formMessage}`,
       html: `<p>You have a new contact form submission from <strong>${name}</strong> &lt;<strong>${email}</strong>&gt;:</p><p>${formMessage}</p>`,
     });
-    console.log("Message sent:", info.messageId);
+    console.log("Contact Message sent to:", EMAIL_RECEIVER_SECRET);
+    console.log("Attempting to send acknowledgment email to:", email);
+    const infoAck = await transporter.sendMail({
+      from: '"Coach Mike Website Form" <' + EMAIL_SENDER_SECRET + ">",
+      to: email,
+      subject: "Acknowledgment: We Received Your Message",
+      text: `Thank you for reaching out, ${name}! I have received your message and will get back to you shortly.`,
+      html: `<p>Thank you for reaching out, <strong>${name}</strong>! I have received your message and will get back to you shortly.</p>`,
+    });
+    console.log("Acknowledgment email sent to:", email);
     res.json({
       responseMessage:
         "After verifying reCAPTCHA, email has been sent successfully!",

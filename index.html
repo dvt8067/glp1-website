@@ -158,9 +158,16 @@
     </p>
     <script src="https://www.google.com/recaptcha/api.js?render=6Lfzl6crAAAAAC3O3Eo0V2fRs9PAipGbax__dFOF"></script>
     <script>
-      // const BACKEND_URL = "http://127.0.0.1:3000/contact";
-      const BACKEND_URL = 'https://glp1-website.onrender.com/contact';
-      const SITE_KEY = "6Lfzl6crAAAAAC3O3Eo0V2fRs9PAipGbax__dFOF"; //
+      const isLocalhost =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1";
+      let BACKEND_URL;
+      if (isLocalhost) {
+        BACKEND_URL = "http://127.0.0.1:3000/contact";
+      } else {
+        BACKEND_URL = "https://glp1-website.onrender.com/contact";
+      }
+      const RECAPTCHA_SITE_KEY = "6Lfzl6crAAAAAC3O3Eo0V2fRs9PAipGbax__dFOF"; //
       document
         .querySelector(".contact-form")
         .addEventListener("submit", async function (e) {
@@ -174,7 +181,7 @@
           statusMessageDiv.className = "result-message submitting";
           grecaptcha.ready(function () {
             grecaptcha
-              .execute(SITE_KEY, { action: "submit" })
+              .execute(RECAPTCHA_SITE_KEY, { action: "submit" })
               .then(async function (recaptchaResponse) {
                 // Send the form data along with the reCAPTCHA response to the backend
                 try {
@@ -193,6 +200,7 @@
                     statusMessageDiv.textContent =
                       "Thank you for your submission!";
                     statusMessageDiv.className = "result-message success";
+                    document.querySelector(".contact-form").reset();
                   } else {
                     statusMessageDiv.textContent =
                       result.message || "reCAPTCHA verification failed.";
