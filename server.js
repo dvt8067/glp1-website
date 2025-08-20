@@ -59,7 +59,7 @@ app.post("/contact", async (req, res) => {
     const infoAck = await transporter.sendMail({
       from: '"Coach Mike Website Form" <' + EMAIL_SENDER_SECRET + ">",
       to: email,
-      subject: "Acknowledgment: We Received Your Message",
+      subject: "Acknowledgment: Coach Mike Received Your Message",
       text: `Thank you for reaching out, ${name}! I have received your message and will get back to you shortly.`,
       html: `<p>Thank you for reaching out, <strong>${name}</strong>! I have received your message and will get back to you shortly.</p>`,
     });
