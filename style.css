@@ -1,4 +1,32 @@
-/* How I Work Row (side by side) */
+/* style.css */
+html {
+  scroll-behavior: smooth !important;
+}
+.main-nav {
+  background: #183153;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+.main-nav a:hover {
+  color: #23d0a7;
+}
 .how-i-work-row {
   display: flex;
   align-items: stretch;
@@ -12,17 +40,17 @@
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
-    min-height: 340px;
-    max-width: 50%;
-    background: linear-gradient(135deg, #f9fbff 60%, #e3f0fa 100%);
-    border: 1.5px solid #b3d1e7;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    margin: 0;
-    padding: 48px 40px;
-    box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 340px;
+  max-width: 50%;
+  background: linear-gradient(135deg, #f9fbff 60%, #e3f0fa 100%);
+  border: 1.5px solid #b3d1e7;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 48px 40px;
+  box-sizing: border-box;
 }
 .how-i-work-image {
   flex: 1 1 0;
@@ -44,7 +72,7 @@
   max-width: 500px;
   min-width: 180px;
   height: auto;
-  filter: drop-shadow(0 4px 18px rgba(0,0,0,0.10));
+  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.1));
   border-radius: 18px;
   object-fit: contain;
   align-self: center;
@@ -87,13 +115,13 @@
   margin-bottom: 12px;
   font-size: 18px;
   color: #1a3557;
-  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
   font-weight: 500;
   letter-spacing: 0.5px;
   background: linear-gradient(90deg, #b3d1e7 0%, #e3f0fa 100%);
   border-radius: 6px;
   padding: 6px 14px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   transition: background 0.2s;
 }
 .how-i-work-item:last-child {
@@ -108,7 +136,7 @@
   max-width: 700px;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   padding: 40px 36px 32px 36px;
   text-align: center;
 }
@@ -132,7 +160,7 @@
   color: #223a5e;
   margin: 0 0 10px 0;
   padding: 0 0 0 0;
-  quotes: "\201C" "\201D";
+  quotes: "\201C""\201D";
 }
 .testimonial-client {
   display: block;
@@ -148,7 +176,7 @@
   background: #f9fbff;
   border-radius: 24px;
   border: 1.5px solid #b3d1e7;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   padding: 48px 40px;
   text-align: center;
 }
@@ -177,13 +205,13 @@
   border: none;
   border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
 .book-call-btn:hover {
   background: linear-gradient(90deg, #005fa3 20%, #1fa2ff 80%);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
 }
 /* Together row: image and block side by side */
 .together-row {
@@ -205,7 +233,7 @@
   max-width: 40vw;
   min-width: 260px;
   height: auto;
-  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.13));
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.13));
   border-radius: 18px;
   transition: width 0.2s, max-width 0.2s;
   object-fit: contain;
@@ -470,7 +498,7 @@ p {
   text-align: center;
   padding: 22px 0;
   border: none;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   letter-spacing: 0.5px;
   transition: box-shadow 0.2s;
   z-index: 1;
@@ -481,7 +509,7 @@ p {
   border-radius: 18px;
 }
 .page-divider:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
 }
 .contact-form {
   max-width: 400px;
@@ -490,7 +518,7 @@ p {
   background: #fff;
   border-radius: 24px;
   border: 1.5px solid #b3d1e7;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
@@ -515,7 +543,7 @@ p {
   font-size: 16px;
   background: #f9fbff;
   transition: border-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 .contact-form input:focus {
   border-color: #0074d9;
@@ -545,9 +573,9 @@ p {
   padding: 0.75rem 1.25rem;
   border-radius: 6px;
   font-size: 1rem;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: background 0.2s, color 0.2s, border 0.2s;
   min-height: 1.5em;
   text-align: center;

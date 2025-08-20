@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
-// TODO: Change the environmental variables back
+
 const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET;
 const EMAIL_SENDER_SECRET = process.env.EMAIL_SENDER_SECRET;
 const EMAIL_SENDER_PASSWORD_SECRET = process.env.EMAIL_SENDER_PASSWORD_SECRET;
