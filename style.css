@@ -654,3 +654,50 @@ p {
   margin-top: 16px;
   text-align: center;
 }
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #183153;
+  color: #fff;
+  padding: 32px 0 24px 0;
+  margin-top: 48px;
+  border-top: 3px solid #fff;
+  font-size: 1.08em;
+  letter-spacing: 0.02em;
+  gap: 8px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  margin: 4px 0;
+}
+
+.footer-right .privacy-policy-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-right .privacy-policy-link:hover {
+  color: #eaeaea;
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .footer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    text-align: left;
+  }
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    margin: 0 32px;
+  }
+}
