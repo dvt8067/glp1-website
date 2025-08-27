@@ -701,3 +701,21 @@ p {
     margin: 0 32px;
   }
 }
+.footer-social {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  transform: scale(1.12);
+}
