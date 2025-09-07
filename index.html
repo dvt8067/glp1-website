@@ -6,6 +6,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav class="main-nav">
@@ -117,18 +121,137 @@
     <section id="testimonials">
       <section class="testimonials-section">
         <h2 class="testimonials-heading">Client Wins</h2>
-        <div class="testimonial">
-          <blockquote>
-            "I've lost 150 pounds in working with Mike. His program works!."
-          </blockquote>
-          <span class="testimonial-client">– Bev W. (retired teacher)</span>
-        </div>
-        <div class="testimonial">
-          <blockquote>
-            "I lost 96 pounds and got support, education and accountability from
-            Mike."
-          </blockquote>
-          <span class="testimonial-client">– Myles A. (entrepreneur)</span>
+        <div class="testimonial-slider">
+          <button
+            class="testimonial-nav prev"
+            aria-label="Previous testimonial"
+          >
+            &lt;
+          </button>
+          <div class="testimonial-slides">
+            <div class="testimonial-slide active">
+              <img
+                src="images/Bev W.jpg"
+                alt="Client 1"
+                class="testimonial-photo"
+              />
+              <blockquote>
+                I’ve struggled with weight for 45 years, trying every diet,
+                program, and supplement, only to lose and regain more. Nothing
+                was sustainable—until Mike. <br />
+                <br />
+                With his compassionate support and science-backed coaching, I’ve
+                finally found real, lasting success. <br />
+                <br />
+                I’ve now lost 150 pounds and enjoy a huge variety of healthy,
+                delicious foods. <br />
+                <br />
+                Mike’s guidance has been life changing. If you want permanent
+                weight loss and better health, he offers real solutions.
+              </blockquote>
+              <span class="testimonial-client">– Bev W. (retired teacher)</span>
+            </div>
+            <div class="testimonial-slide">
+              <img
+                src="images/Myles A.png"
+                alt="Client 2"
+                class="testimonial-photo"
+              />
+              <blockquote>
+                I lost 96 pounds in my first year working with Mike. He’s lived
+                this challenge himself, so his guidance feels real and
+                relatable.
+                <br />
+                <br />
+                His coaching kept me encouraged and steady, reminding me that
+                setbacks are normal and to keep going. I feel healthier and have
+                peace of mind knowing my family’s health issues don’t have to be
+                mine. <br />
+                <br />
+                This isn’t a fad diet or quick fix—it’s a lasting lifestyle
+                change.
+              </blockquote>
+              <span class="testimonial-client">– Myles A. (entrepreneur)</span>
+            </div>
+            <div class="testimonial-slide">
+              <img
+                src="images/Rose L.jpeg"
+                alt="Client 3"
+                class="testimonial-photo"
+              />
+              <blockquote>
+                Coach Mike has been a true blessing! In just 6 months, I lost an
+                amazing 30 pounds, and my clothes fit so much better now. I have
+                more ENERGY, and my joints and muscles are pain-free most of the
+                time. The best part is hearing my kids express their pride and
+                encouragement, which has boosted my confidence and given me a
+                better body image. <br /><br />
+                But that’s not all! A year later, my A1C dropped from 7.2 to
+                5.5, which is incredible. Coach Mike's guidance and support have
+                been pivotal in achieving these results. I'm thrilled with my
+                progress and excited for the future!
+              </blockquote>
+              <span class="testimonial-client"
+                >– Rose L. (Registered Nurse)</span
+              >
+            </div>
+            <div class="testimonial-slide">
+              <img
+                src="images/Lisa M.jpg"
+                alt="Client 4"
+                class="testimonial-photo"
+              />
+              <blockquote>
+                I got off my GLP-1 without gaining the weight back—actually, I
+                lost more weight, dropped 3 inches from my waist, and feel great
+                in my clothes. <br />
+                <br />
+                Before working with Mike, I constantly asked, “What am I going
+                to eat tonight?” That lack of planning led to poor choices. Mike
+                helped me build a simple system for planning, so I now fuel my
+                body with healthier foods. <br />
+                <br />
+                Walking used to be a struggle; a mile felt huge. Now I’m
+                training for the Camino de Santiago—a 60-mile trek I dreamed
+                about for 20 years. Mike made it possible. <br />
+                <br />
+                He’s given me practical resources, and I’ve learned patience and
+                grace. Before, slip-ups made me want to quit. Now I bounce back
+                quickly and keep going. <br />
+                <br />
+                If you want to take control of your health and make your goals
+                real, reach out to Mike. He’s more than a coach, he’s a catalyst
+                for lasting change.
+              </blockquote>
+              <span class="testimonial-client"
+                >– Lisa M. (Legislative Liaison)</span
+              >
+            </div>
+            <div class="testimonial-slide">
+              <img
+                src="images/Heather D.jpg"
+                alt="Client 5"
+                class="testimonial-photo"
+              />
+              <blockquote>
+                Mike’s mix of encouragement and accountability has been
+                powerful. I’ve become more active, more mindful, and I no longer
+                obsess over the scale.<br /><br />
+                With his coaching, I’ve lost weight in a steady, healthy way and
+                now fit into clothes I love. Walking has become a regular habit,
+                and I enjoy meals without guilt. <br /><br />
+                I focus on building muscle and feeling confident in my body, not
+                just chasing a number. Mike’s support helps me bounce back from
+                setbacks without shame.
+              </blockquote>
+              <span class="testimonial-client"
+                >– Heather D. (Retired Associate Professor)</span
+              >
+            </div>
+          </div>
+          <button class="testimonial-nav next" aria-label="Next testimonial">
+            &gt;
+          </button>
         </div>
       </section>
     </section>
@@ -177,7 +300,6 @@
       </section>
     </div>
     <div class="footer-social">
-     
       <a
         href="https://www.instagram.com/healthcoachmikethomas/"
         target="_blank"
@@ -202,13 +324,17 @@
           class="social-icon"
         />
       </a>
-       <a
+      <a
         href="https://www.youtube.com/@wlscoaching6872"
         target="_blank"
         rel="noopener"
         aria-label="YouTube"
       >
-        <img src="images/youtube-svgrepo-com.svg" alt="YouTube" class="social-icon" />
+        <img
+          src="images/youtube-svgrepo-com.svg"
+          alt="YouTube"
+          class="social-icon"
+        />
       </a>
       <a
         href="https://www.linkedin.com/in/michael-thomas-plant-guy/"

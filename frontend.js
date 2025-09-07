@@ -36,6 +36,30 @@ var SmoothScroll = {
 };
 
 SmoothScroll.init();
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".testimonial-slide");
+  const prevBtn = document.querySelector(".testimonial-nav.prev");
+  const nextBtn = document.querySelector(".testimonial-nav.next");
+  let current = 0;
+
+  function showSlide(idx) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === idx);
+    });
+  }
+
+  prevBtn.addEventListener("click", function () {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  nextBtn.addEventListener("click", function () {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+});
 
 const isLocalhost =
   window.location.hostname === "localhost" ||

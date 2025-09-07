@@ -130,44 +130,147 @@ html {
 .how-i-work-item:hover {
   background: linear-gradient(90deg, #e3f0fa 0%, #b3d1e7 100%);
 }
-/* Testimonials Section */
-.testimonials-section {
-  margin: 56px auto 56px auto;
-  max-width: 700px;
-  background: #fff;
+/* --- Testimonials Section (Clean, No Duplicates) --- */
+
+.testimonial-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 48px auto;
+  background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  padding: 40px 36px 32px 36px;
+  box-shadow: 0 4px 24px rgba(24, 49, 83, 0.18);
+  padding: 32px 0;
+  border: 3px solid #0074d9;
+}
+
+.testimonial-slides {
+  width: 100%;
+  min-height: 340px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 12px;
+  padding: 0 32px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: opacity 0.4s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.testimonial-slide.active {
+  display: flex;
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 3px solid #0074d9;
+  box-shadow: 0 2px 8px rgba(24,49,83,0.10);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial-blockquote,
+.testimonial-slide blockquote {
+  font-family: 'Roboto Slab', 'Roboto', 'Segoe UI', 'Arial', sans-serif;
+  font-size: 1.35em;
+  /* font-style: italic; */
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  color: #183153;
+  line-height: 1.8;
+  min-height: 110px;
+  padding: 20px 18px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(24,49,83,0.08);
+  margin: 0 0 22px 0;
+  text-align: center;
+  max-width: 600px;
+}
+
+.testimonial-client {
+  font-family: 'Roboto Slab', 'Roboto', 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 700;
+  color: #0074d9;
+  font-size: 1.15em;
+  margin-top: 12px;
+  letter-spacing: 0.7px;
   text-align: center;
 }
-.testimonials-heading {
-  font-size: 26px;
-  color: #0074d9;
+
+.testimonial-nav {
+  background: #0074d9;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.7em;
+  cursor: pointer;
+  margin: 0 18px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(24,49,83,0.10);
   font-family: "Roboto", "Segoe UI", "Arial", sans-serif;
-  margin-bottom: 28px;
-  font-weight: 800;
-  letter-spacing: 1px;
 }
-.testimonial {
-  margin-bottom: 32px;
+.testimonial-nav:hover {
+  background: #183153;
+  box-shadow: 0 4px 16px rgba(24,49,83,0.18);
 }
-.testimonial:last-child {
-  margin-bottom: 0;
+
+/* Client Wins Title */
+.testimonials-heading {
+  margin-bottom: 40px;
+  font-size: 2.4em;
+  font-family: "Roboto Slab", "Roboto", "Segoe UI", "Arial", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #0074d9;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(24,49,83,0.08);
+  background: linear-gradient(90deg, #0074d9 0%, #183153 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.testimonial blockquote {
-  font-size: 20px;
-  font-style: italic;
-  color: #223a5e;
-  margin: 0 0 10px 0;
-  padding: 0 0 0 0;
-  quotes: "\201C""\201D";
-}
-.testimonial-client {
-  display: block;
-  font-size: 16px;
-  color: #555;
-  margin-top: 2px;
-  font-style: normal;
+
+/* Prettier Client Wins Title */
+.testimonials-heading {
+  margin-bottom: 40px;
+  font-size: 2.4em;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #0074d9;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(24,49,83,0.08);
+  background: linear-gradient(90deg, #0074d9 0%, #183153 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 /* Book a Call Section */
 .book-call-section {
