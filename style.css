@@ -840,3 +840,50 @@ p {
 .more-about-link:hover {
   color: #005fa3;
 }
+/* Responsive layout for first three sections */
+@media (max-width: 700px) {
+  .first-row,
+  .together-row,
+  .how-i-work-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .about-mike-container,
+  .challenge-container,
+  .together-image,
+  .together-container,
+  .how-i-work-section,
+  .how-i-work-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-mike-photo,
+  .together-image img,
+  .how-i-work-image img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  .challenge-list,
+  .together-list,
+  .how-i-work-list {
+    padding-left: 0;
+    text-align: left;
+    margin: 0 auto 16px auto;
+    max-width: 340px;
+  }
+
+  .challenge-heading,
+  .together-heading,
+  .how-i-work-heading {
+    font-size: 1.3em;
+    margin-top: 16px;
+  }
+}
