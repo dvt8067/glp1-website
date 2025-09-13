@@ -822,3 +822,21 @@ p {
   opacity: 1;
   transform: scale(1.12);
 }
+.more-about-mike {
+  text-align: center;
+  margin: 32px 0 12px 0;
+  font-family: "Roboto", "Segoe UI", "Arial", sans-serif;
+  font-size: 1.08em;
+  color: #183153;
+}
+
+.more-about-link {
+  color: #0074d9;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-left: 6px;
+  transition: color 0.2s;
+}
+.more-about-link:hover {
+  color: #005fa3;
+}
