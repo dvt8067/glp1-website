@@ -859,7 +859,7 @@ p {
   }
 }
 /* Main Sections for mobile */
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
   .first-row,
   .together-row,
   .how-i-work-row {
@@ -911,7 +911,7 @@ p {
   }
   .together-image img,
   .how-i-work-image img {
-    max-width: 10vw;
+    max-width: 100vw;
     width: 100%;
     height: auto;
     margin-bottom: 16px;
@@ -926,5 +926,88 @@ p {
   .page-divider span {
     padding: 0 12px;
     font-size: 1em;
+  }
+}
+/* Mobile styles for Client Wins, Book a Call, and Contact Mike sections */
+@media (max-width: 700px) {
+  .testimonial-slider {
+    max-width: 94vw;
+    padding: 8px 0;         /* Reduce vertical padding */
+    border-radius: 14px;
+  }
+  .testimonial-slide {
+    padding: 0 12px;        /* Reduce horizontal padding inside slides */
+  }
+  .testimonial-blockquote,
+  .testimonial-slide blockquote {
+    font-size: 1em;         /* Slightly smaller text */
+    padding: 8px 4vw;       /* Less vertical and horizontal padding */
+    max-width: 88vw;
+    border-radius: 10px;
+    margin-bottom: 10px;    /* Less space below blockquote */
+  }
+  .testimonial-photo {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 8px;     /* Less space below photo */
+  }
+  .testimonials-heading {
+    font-size: 1.2em;
+    margin-bottom: 16px;    /* Less space below heading */
+  }
+  .testimonial-client {
+    font-size: 0.95em;
+    margin-top: 6px;        /* Less space above client name */
+  }
+  .testimonial-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 1em;
+    margin: 0 6px;
+  }
+
+  .book-call-section {
+    max-width: 88vw;
+    padding: 18px 4vw;
+    border-radius: 14px;
+    margin: 24px auto 0 auto;
+  }
+  .book-call-heading {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .book-call-subheading {
+    font-size: 1em;
+    margin-bottom: 18px;
+  }
+  .book-call-btn {
+    padding: 12px 18px;
+    font-size: 1em;
+    border-radius: 8px;
+  }
+
+  .contact-form {
+    max-width: 88vw;
+    padding: 18px 4vw;
+    border-radius: 14px;
+    margin: 24px auto;
+    gap: 12px;
+  }
+  .contact-form h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .contact-form input,
+  .contact-form button {
+    font-size: 1em;
+    padding: 8px;
+    border-radius: 8px;
+  }
+}
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2em;
+    padding: 18px 0 10px 0;
+    margin-bottom: 0;
   }
 }
