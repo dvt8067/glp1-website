@@ -847,12 +847,12 @@ p {
   }
   .main-nav ul {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     align-items: center;
   }
   .main-nav a {
     font-size: 1em;
-    padding: 8px 0;
+    padding: 1px 0;
     width: 100vw;
     text-align: center;
     display: block;
