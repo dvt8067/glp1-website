@@ -843,19 +843,21 @@ p {
 /* Nav Bar for mobile */
 @media (max-width: 700px) {
   .main-nav {
-    padding: 12px 0;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 6px 0; /* Reduce vertical padding */
   }
   .main-nav ul {
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
+    gap: 6px;       /* Reduce gap between links */
+    padding: 0 2vw; /* Add horizontal padding so links don't touch edges */
   }
   .main-nav a {
-    font-size: 1em;
-    padding: 1px 0;
-    width: 100vw;
+    font-size: 0.95em; /* Slightly smaller text */
+    padding: 6px 0;    /* Less vertical padding for links */
+    width: 100%;
     text-align: center;
     display: block;
+    box-sizing: border-box;
   }
 }
 /* Main Sections for mobile */
