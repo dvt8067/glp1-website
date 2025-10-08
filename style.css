@@ -1013,3 +1013,48 @@ p {
     margin-bottom: 0;
   }
 }
+.glp1-guide-section {
+  margin: 56px auto 0 auto;
+  max-width: 500px;
+  background: #f9fbff;
+  border-radius: 24px;
+  border: 1.5px solid #b3d1e7;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.glp1-guide-heading {
+  font-size: 26px;
+  color: #0074d9;
+  font-family: "Roboto", "Segoe UI", "Arial", sans-serif;
+  margin-bottom: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.glp1-guide-subheading {
+  font-size: 18px;
+  color: #223a5e;
+  margin-bottom: 28px;
+}
+
+.glp1-guide-btn {
+  display: inline-block;
+  padding: 16px 36px;
+  background: linear-gradient(90deg, #0074d9 20%, #23d0a7 80%);
+  color: #fff;
+  font-size: 20px;
+  font-family: "Roboto", "Segoe UI", "Arial", sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.glp1-guide-btn:hover {
+  background: linear-gradient(90deg, #005fa3 20%, #1fa2ff 80%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+}
