@@ -873,10 +873,26 @@ p {
   }
   .about-mike-container,
   .challenge-container {
-    max-width: 88vw;
-    padding: 24px 5vw;
-    margin: 0 auto 24px auto;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
+    padding: 12px 4vw;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-mike-content,
+  .challenge-list {
+    max-width: 88vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
+    text-align: left;
   }
   .together-container,
   .how-i-work-section {
@@ -1124,17 +1140,143 @@ p {
 }
 
 @media (max-width: 700px) {
+  html {
+    font-size: 15px;
+  }
+  h2{
+    font-size: 2em;
+    margin-bottom: 12px;
+  }
+  .first-row,
+  .together-row,
+  .how-i-work-row,
+  .about-mike-container,
+  .challenge-container,
+  .together-container,
+  .how-i-work-section,
+  .testimonial-slider,
+  .glp1-guide-section,
+  .book-call-section,
+  .contact-form,
   .pricing-section {
-    padding: 24px 6vw;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 12px 4vw;
+    border-radius: 12px;
   }
-  .pricing-row {
+  .about-mike-content,
+  .challenge-list,
+  .together-list,
+  .how-i-work-list,
+  .testimonial-blockquote,
+  .testimonial-slide blockquote {
+    font-size: 0.95em;
+    max-width: 88vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
+  }
+  .about-mike-photo,
+  .testimonial-photo {
+    max-width: 60px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+  }
+  .pricing-heading,
+  .glp1-guide-heading,
+  .book-call-heading {
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+  .pricing-title,
+  .pricing-price,
+  .glp1-guide-subheading,
+  .book-call-subheading {
+    font-size: 0.95em;
+    margin-bottom: 6px;
+  }
+  .pricing-details,
+  .challenge-item,
+  .together-item,
+  .how-i-work-item {
+    font-size: 0.92em;
+    padding: 2px 6px;
+    margin-bottom: 6px;
+  }
+  .glp1-guide-btn,
+  .book-call-btn {
+    padding: 8px 16px;
+    font-size: 0.95em;
+    border-radius: 7px;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 0.95em;
+    padding: 6px;
+    border-radius: 7px;
+  }
+  .testimonial-nav {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9em;
+    margin: 0 3px;
+  }
+  .page-divider {
+    font-size: 0.95em;
+    padding: 6px 0;
+  }
+  .more-about-mike {
+    font-size: 0.95em;
+    margin: 14px 0 6px 0;
+  }
+}
+@media (max-width: 700px) {
+  .challenge-container {
+    max-width: 90vw;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box;
+    padding: 12px 4vw;
+    border-radius: 12px;
+    display: flex;
     flex-direction: column;
-    gap: 18px;
+    align-items: center;
+    justify-content: center;
   }
-  .pricing-option {
-    padding: 24px 12px;
-    min-width: 0;
-    max-width: 98vw;
-    margin: 0 auto 18px auto;
+}
+
+/* Make all major headings consistent in size and style */
+.challenge-heading,
+.together-heading,
+.how-i-work-heading,
+.glp1-guide-heading,
+.book-call-heading,
+.pricing-heading,
+.contact-form h2,
+.testimonials-heading {
+  font-size: 2em;
+  color: #0074d9;
+  font-family: "Roboto Slab", "Roboto", "Segoe UI", "Arial", sans-serif;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .challenge-heading,
+  .together-heading,
+  .how-i-work-heading,
+  .glp1-guide-heading,
+  .book-call-heading,
+  .pricing-heading,
+  .contact-form h2,
+  .testimonials-heading {
+    font-size: 1.1em;
+    margin-bottom: 8px;
   }
 }
