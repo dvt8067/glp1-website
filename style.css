@@ -1042,7 +1042,7 @@ p {
 .glp1-guide-btn {
   display: inline-block;
   padding: 16px 36px;
-  background: linear-gradient(90deg, #0074d9 20%, #23d0a7 80%);
+  background: #0074d9; /* Lighter blue by default */
   color: #fff;
   font-size: 20px;
   font-family: "Roboto", "Segoe UI", "Arial", sans-serif;
@@ -1055,6 +1055,86 @@ p {
   cursor: pointer;
 }
 .glp1-guide-btn:hover {
-  background: linear-gradient(90deg, #005fa3 20%, #1fa2ff 80%);
+  background: #183153; /* Dark blue on hover */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+}
+/* Pricing Section */
+.pricing-section {
+  background: #f9fbff;
+  border-radius: 24px;
+  border: 1.5px solid #b3d1e7;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 56px auto 0 auto;
+  padding: 48px 32px;
+  text-align: center;
+  font-family: "Roboto", "Segoe UI", "Arial", sans-serif;
+}
+
+.pricing-heading {
+  font-size: 2em;
+  color: #0074d9;
+  font-family: "Roboto Slab", "Roboto", "Segoe UI", "Arial", sans-serif;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.pricing-row {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pricing-option {
+  background: #fff;
+  border-radius: 18px;
+  border: 1.5px solid #b3d1e7;
+  box-shadow: 0 2px 12px rgba(24,49,83,0.07);
+  padding: 32px 24px;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 260px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.pricing-title {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #183153;
+  margin-bottom: 12px;
+  font-family: "Roboto Slab", "Roboto", "Segoe UI", "Arial", sans-serif;
+}
+
+.pricing-price {
+  font-size: 2em;
+  font-weight: 900;
+  color: #0074d9;
+  margin-bottom: 18px;
+  font-family: "Roboto Slab", "Roboto", "Segoe UI", "Arial", sans-serif;
+}
+
+.pricing-details {
+  margin: 0;
+  padding-left: 18px;
+  color: #223a5e;
+  font-size: 1.08em;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .pricing-section {
+    padding: 24px 6vw;
+  }
+  .pricing-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .pricing-option {
+    padding: 24px 12px;
+    min-width: 0;
+    max-width: 98vw;
+    margin: 0 auto 18px auto;
+  }
 }
