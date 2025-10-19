@@ -1280,3 +1280,10 @@ p {
     margin-bottom: 8px;
   }
 }
+
+/* hide challenge section on small screens */
+@media (max-width: 700px) {
+  .challenge-container {
+    display: none !important;
+  }
+}
