@@ -15,8 +15,8 @@ const EMAIL_RECEIVER_SECRET = process.env.EMAIL_RECEIVER_SECRET;
 //Define the transporter for nodemailer
 const transporter = nodemailer.createTransport({
   host: "smtp.mailgun.org",
-  port: 465,
-  secure: true, // true for 465, false for other ports
+  port: 2525,
+  secure: false, // true for 465, false for other ports
   auth: {
     user: EMAIL_SENDER_SECRET,
     pass: EMAIL_SENDER_PASSWORD_SECRET,
